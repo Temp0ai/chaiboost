@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "ChaiBoost",
+    "slug": "chaiboost",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#8B4513"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.chaiboost.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#8B4513"
+      },
+      "package": "com.chaiboost.app"
+    },
+    "plugins": ["expo-secure-store", "expo-image-picker"]
+  }
+}
