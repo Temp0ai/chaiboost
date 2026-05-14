@@ -26,11 +26,11 @@ export const ImageGeneratorScreen = ({ route, navigation }: any) => {
   const handleGenerate = async () => {
     try {
       const id = await generateImage({
-        content_type: contentType,
-        prompt_hint: prompt,
+        contentType,
+        prompt: prompt,
         style,
-        use_logo: useLogo,
-        text_overlay: textLine1 ? { line1: textLine1, line2: textLine2 } : undefined,
+        includeLogo: useLogo,
+        textOverlay: textLine1 ? `${textLine1}\n${textLine2}` : undefined,
       });
       // Poll for result
       setGeneratedUrl(`content/${id}/preview`);

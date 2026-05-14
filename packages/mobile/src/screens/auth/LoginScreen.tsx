@@ -78,7 +78,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
           <View style={styles.form}>
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Email</Text>
-              <View style={[styles.inputContainer, emailError && styles.inputError]}>
+              <View style={[styles.inputContainer, emailError ? styles.inputError : undefined]}>
                 <MaterialCommunityIcons
                   name="email-outline"
                   size={20}
@@ -103,7 +103,7 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
 
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Password</Text>
-              <View style={[styles.inputContainer, passwordError && styles.inputError]}>
+              <View style={[styles.inputContainer, passwordError ? styles.inputError : undefined]}>
                 <MaterialCommunityIcons
                   name="lock-outline"
                   size={20}

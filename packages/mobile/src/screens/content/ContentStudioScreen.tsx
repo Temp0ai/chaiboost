@@ -18,7 +18,7 @@ export const ContentStudioScreen = ({ navigation }: any) => {
   }, []);
 
   const filteredContent = contentPieces.filter((c) => {
-    if (filter !== 'all' && c.content_type !== filter) return false;
+    if (filter !== 'all' && c.type !== filter) return false;
     if (search && !c.title?.toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
@@ -62,7 +62,10 @@ export const ContentStudioScreen = ({ navigation }: any) => {
           contentContainerStyle={styles.grid}
           renderItem={({ item }) => (
             <ContentCard
-              content={item}
+              thumbnailUrl={item.thumbnailUrl || item.mediaUrl || ''}
+              title={item.title || item.caption || 'Untitled'}
+              status={item.status === 'published' ? 'published' : item.status === 'scheduled' ? 'scheduled' : 'draft'}
+              type={item.type === 'video' ? 'video' : item.type === 'carousel' ? 'carousel' : 'image'}
               onPress={() => navigation.navigate('ContentDetail', { id: item.id })}
             />
           )}

@@ -29,11 +29,11 @@ export async function generateImage(params: {
     response_format: 'url',
   });
 
-  const image = response.data[0];
+  const image = response.data?.[0];
 
   return {
-    url: image.url!,
-    revisedPrompt: image.revised_prompt || prompt,
+    url: image?.url ?? '',
+    revisedPrompt: image?.revised_prompt || prompt,
     model: config.openai.imageModel,
     tokens: { prompt: 0, completion: 0, total: 0 }, // DALL-E doesn't report tokens
   };
@@ -60,5 +60,5 @@ export async function generateImageVariation(
     response_format: 'url',
   });
 
-  return result.data.map((img) => img.url!);
+  return (result.data ?? []).map((img) => img.url ?? '');
 }

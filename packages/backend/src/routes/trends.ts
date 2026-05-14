@@ -1,12 +1,13 @@
-import { Router } from 'express';
-import { AuthenticatedRequest } from '../types/express';
+import { Router, Request, Response } from 'express';
+import { authMiddleware } from '../middleware/auth';
 import { getTrends, refreshTrends } from '../services/trend.service';
-import { query } from '../config/database';
 
 const router = Router();
 
+router.use(authMiddleware);
+
 // GET /v1/trends/hashtags
-router.get('/hashtags', async (req: AuthenticatedRequest, res) => {
+router.get('/hashtags', async (req: Request, res: Response) => {
   const { category, limit } = req.query;
   const trends = await getTrends(
     category as string,
@@ -18,14 +19,14 @@ router.get('/hashtags', async (req: AuthenticatedRequest, res) => {
 });
 
 // GET /v1/trends/topics
-router.get('/topics', async (req: AuthenticatedRequest, res) => {
+router.get('/topics', async (req: Request, res: Response) => {
   const { category, platform } = req.query;
   const topics = await getTrends(category as string, platform as string);
   res.json({ items: topics });
 });
 
 // POST /v1/trends/refresh
-router.post('/refresh', async (req: AuthenticatedRequest, res) => {
+router.post('/refresh', async (req: Request, res: Response) => {
   const { category, platform } = req.body;
   const topics = await refreshTrends(category, platform);
   res.json({ items: topics, refreshed_at: new Date().toISOString() });

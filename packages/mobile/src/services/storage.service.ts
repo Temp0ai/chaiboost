@@ -31,7 +31,7 @@ export const storageService = {
   clear: async (): Promise<void> => {
     try {
       const keys = await AsyncStorage.getAllKeys();
-      const chaiboostKeys = keys.filter((key) => key.startsWith('@chaiboost:'));
+      const chaiboostKeys = keys.filter((key: string) => key.startsWith('@chaiboost:'));
       await AsyncStorage.multiRemove(chaiboostKeys);
     } catch (error) {
       console.error('Storage clear error:', error);

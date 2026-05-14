@@ -32,3 +32,32 @@ export const colors = {
 } as const;
 
 export type ColorKey = keyof typeof colors;
+
+// React Native Paper compatible theme
+export const theme = {
+  colors: {
+    primary: colors.primary,
+    primaryContainer: colors.primaryLight,
+    secondary: colors.secondary,
+    secondaryContainer: colors.secondaryLight,
+    background: colors.background,
+    surface: colors.surface,
+    surfaceVariant: colors.surfaceVariant,
+    error: colors.error,
+    errorContainer: colors.errorLight,
+    onPrimary: colors.white,
+    onSecondary: colors.black,
+    onBackground: colors.text,
+    onSurface: colors.text,
+    onError: colors.white,
+    outline: colors.border,
+    elevation: {
+      level0: 'transparent',
+      level1: colors.surfaceVariant,
+      level2: '#F0EBE5',
+      level3: '#EBE5DE',
+      level4: '#E8E0D8',
+      level5: '#E3DAD0',
+    },
+  },
+};

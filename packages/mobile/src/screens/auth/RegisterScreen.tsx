@@ -81,7 +81,7 @@ export const RegisterScreen: React.FC<Props> = ({ navigation }) => {
   ) => (
     <View style={styles.inputGroup}>
       <Text style={styles.label}>{label}</Text>
-      <View style={[styles.inputContainer, errors[key] && styles.inputError]}>
+      <View style={[styles.inputContainer, errors[key] ? styles.inputError : undefined]}>
         <MaterialCommunityIcons name={icon} size={20} color={colors.textSecondary} />
         <TextInput
           style={styles.input}

@@ -21,7 +21,7 @@ pool.on('connect', () => {
   logger.debug('New PostgreSQL client connected');
 });
 
-export async function query<T = any>(text: string, params?: any[]): Promise<QueryResult<T>> {
+export async function query<T extends Record<string, any> = any>(text: string, params?: any[]): Promise<QueryResult<T>> {
   const start = Date.now();
   const result = await pool.query<T>(text, params);
   const duration = Date.now() - start;

@@ -113,7 +113,7 @@ export const TIER_LIMITS: Record<SubscriptionTier, TierLimits> = {
   },
 };
 
-export function getTierLimit(tier: SubscriptionTier, feature: keyof TierLimits): number | boolean | string[] {
+export function getTierLimit(tier: SubscriptionTier, feature: keyof TierLimits): number | boolean | string | string[] {
   return TIER_LIMITS[tier][feature];
 }
 

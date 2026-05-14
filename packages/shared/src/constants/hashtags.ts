@@ -42,10 +42,10 @@ export const TEA_HASHTAGS = {
 } as const;
 
 export const CURRENT_SEASON_HASHTAGS: Record<string, string[]> = {
-  spring: TEA_HASHTAGS.seasonal.spring,
-  summer: TEA_HASHTAGS.seasonal.summer,
-  autumn: TEA_HASHTAGS.seasonal.autumn,
-  winter: TEA_HASHTAGS.seasonal.winter,
+  spring: [...TEA_HASHTAGS.seasonal.spring],
+  summer: [...TEA_HASHTAGS.seasonal.summer],
+  autumn: [...TEA_HASHTAGS.seasonal.autumn],
+  winter: [...TEA_HASHTAGS.seasonal.winter],
 };
 
 export function getSeasonHashtags(): string[] {

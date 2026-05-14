@@ -23,8 +23,8 @@ export const VideoGeneratorScreen = ({ navigation }: any) => {
     try {
       const id = await generateVideo({
         photos: selectedPhotos,
-        music_mood: mood,
-        description,
+        musicMood: mood,
+        scenes: [],
       });
       setGeneratedUrl(`video/${id}`);
     } catch (err) {

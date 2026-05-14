@@ -5,7 +5,7 @@ import { query } from '../config/database';
 import { logger } from '../utils/logger';
 
 const router = Router();
-const stripe = new Stripe(config.stripe.secretKey, { apiVersion: '2024-06-20' });
+const stripe = new Stripe(config.stripe.secretKey, { apiVersion: '2023-10-16' });
 
 // Stripe webhook — raw body required for signature verification
 router.post('/stripe', raw({ type: 'application/json' }), async (req, res) => {
@@ -61,10 +61,10 @@ router.post('/stripe', raw({ type: 'application/json' }), async (req, res) => {
         logger.info(`Unhandled Stripe event: ${event.type}`);
     }
 
-    res.json({ received: true });
+    return res.json({ received: true });
   } catch (err) {
     logger.error('Webhook processing error:', err);
-    res.status(500).json({ error: 'Webhook processing failed' });
+    return res.status(500).json({ error: 'Webhook processing failed' });
   }
 });
 

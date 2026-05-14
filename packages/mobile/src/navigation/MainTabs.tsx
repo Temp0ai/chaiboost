@@ -5,19 +5,19 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { colors } from '../theme/colors';
 
 import { DashboardScreen } from '../screens/main/DashboardScreen';
-import { ContentStudioScreen } from '../screens/main/ContentStudioScreen';
-import { CreateContentScreen } from '../screens/main/CreateContentScreen';
-import { ImageGeneratorScreen } from '../screens/main/ImageGeneratorScreen';
-import { VideoGeneratorScreen } from '../screens/main/VideoGeneratorScreen';
-import { ContentDetailScreen } from '../screens/main/ContentDetailScreen';
-import { CalendarScreen } from '../screens/main/CalendarScreen';
-import { QueueScreen } from '../screens/main/QueueScreen';
-import { SchedulePostScreen } from '../screens/main/SchedulePostScreen';
-import { ReviewsListScreen } from '../screens/main/ReviewsListScreen';
-import { ReviewDetailScreen } from '../screens/main/ReviewDetailScreen';
-import { TrendsScreen } from '../screens/main/TrendsScreen';
-import { OverviewScreen } from '../screens/main/OverviewScreen';
-import { PostPerformanceScreen } from '../screens/main/PostPerformanceScreen';
+import { ContentStudioScreen } from '../screens/content/ContentStudioScreen';
+import { CreateContentScreen } from '../screens/content/CreateContentScreen';
+import { ImageGeneratorScreen } from '../screens/content/ImageGeneratorScreen';
+import { VideoGeneratorScreen } from '../screens/content/VideoGeneratorScreen';
+import { ContentDetailScreen } from '../screens/content/ContentDetailScreen';
+import { CalendarScreen } from '../screens/schedule/CalendarScreen';
+import { QueueScreen } from '../screens/schedule/QueueScreen';
+import { SchedulePostScreen } from '../screens/schedule/SchedulePostScreen';
+import { ReviewsListScreen } from '../screens/engagement/ReviewsListScreen';
+import { ReviewDetailScreen } from '../screens/engagement/ReviewDetailScreen';
+import { TrendsScreen } from '../screens/engagement/TrendsScreen';
+import { OverviewScreen } from '../screens/analytics/OverviewScreen';
+import { PostPerformanceScreen } from '../screens/analytics/PostPerformanceScreen';
 
 export type MainTabParamList = {
   HomeTab: undefined;
